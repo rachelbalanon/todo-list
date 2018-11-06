@@ -23,8 +23,20 @@ function TodoController() {
     ];
 
     vm.addTask = (newTask) => {
-        vm.task.push(angular.copy(newTask));
-    }
+        // console.log(newTask);
+        newTask.completed = false;
+        vm.todoObject.push(angular.copy(newTask));
+    };
+
+    vm.removeTask = (index) => {
+        // console.log(index);
+        vm.todoObject.splice(index, 1);
+    };
+
+    vm.completeTask = (todo) => {
+        todo.completed = true;
+       
+    };
 }
 
 
